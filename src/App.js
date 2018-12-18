@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import Weapons from './components/Weapons.js'
-import Armor from './components/Armor.js'
+import Attire from './components/Attire.js'
 import './App.css';
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
           <Tab eventKey={1} title="Weapons">
             <Weapons />
           </Tab>
-          <Tab eventKey={2} title="Armor">
-            <Armor />
+          <Tab eventKey={2} title="Attire">
+            <Attire />
           </Tab>
         </Tabs>
       </div>

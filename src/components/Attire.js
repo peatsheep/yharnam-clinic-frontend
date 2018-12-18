@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
-class Armor extends Component {
+class Attire extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      armor: []
+      attire: []
     };
   }
     
   componentDidMount() {
-    fetch("http://localhost:5000/armor")
+    fetch("http://localhost:5000/attire")
     .then(response => response.json())
-    .then(armor => this.setState({armor: armor}))
+    .then(attire => this.setState({attire: attire}))
   }
 
   render() {
-    const armorRows = this.state.armor.map(armor => (
-      <tr key={armor.name}>
-        <td>{armor.name}</td>
-        <td>{armor.type}</td>
-        <td>{armor.set}</td>
-        <td>{armor.phys_def}</td>
-        <td>{armor.blunt_def}</td>
-        <td>{armor.thrust_def}</td>
-        <td>{armor.blood_def}</td>
-        <td>{armor.arc_def}</td>
-        <td>{armor.fire_def}</td>
-        <td>{armor.bolt_def}</td>
-        <td>{armor.slow_psn_res}</td>
-        <td>{armor.rapid_psn_res}</td>
-        <td>{armor.frenzy_res}</td>
-        <td>{armor.beasthood}</td>
+    const attireRows = this.state.attire.map(attire => (
+      <tr key={attire.name}>
+        <td>{attire.item_name}</td>
+        <td>{attire.item_type}</td>
+        <td>{attire.set}</td>
+        <td>{attire.phys_def}</td>
+        <td>{attire.blunt_def}</td>
+        <td>{attire.thrust_def}</td>
+        <td>{attire.blood_def}</td>
+        <td>{attire.arc_def}</td>
+        <td>{attire.fire_def}</td>
+        <td>{attire.bolt_def}</td>
+        <td>{attire.slow_psn_res}</td>
+        <td>{attire.rapid_psn_res}</td>
+        <td>{attire.frenzy_res}</td>
+        <td>{attire.beasthood}</td>
       </tr>
     ));
 
     return (
-      <div className="Armor">
+      <div className="attire">
         <Table striped bordered condensed hover>
           <thead>
             <tr>
@@ -57,7 +57,7 @@ class Armor extends Component {
             </tr>
           </thead>
           <tbody>
-            {armorRows}
+            {attireRows}
           </tbody>
         </Table>
       </div>
@@ -65,4 +65,4 @@ class Armor extends Component {
   }
 }
 
-export default Armor;
+export default Attire;
